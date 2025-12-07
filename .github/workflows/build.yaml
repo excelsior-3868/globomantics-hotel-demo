@@ -68,7 +68,9 @@ jobs:
           PAT: ${{ secrets.CI_BOT_PAT }}
           CI_BOT: ${{ secrets.CI_BOT }}
         run: |
-          git clone https://x-access-token:${PAT}@github.com/excelsior-3868/central-ci.git develop
+          git clone https://x-access-token:${PAT}@github.com/excelsior-3868/central-ci.git
+          ls
+          pwd
           cd central-ci
           git config user.name "ci-bot"
           git config user.email "$CI_BOT"
