@@ -83,8 +83,8 @@ jobs:
           PAT: ${{ secrets.CI_BOT_PAT }}
         run: |
           cd central-ci/apps/globomantics-hotel/overlays/dev
-          kustomize edit set image openlabfree/globomantics-fe:v4=ghcr.io/${{ github.repository_owner }}/globomantics-hotel-frontend:${IMAGE_TAG}
-          kustomize edit set image openlabfree/globomantics-be:v7=ghcr.io/${{ github.repository_owner }}/globomantics-hotel-backend:${IMAGE_TAG}
+          kustomize edit set image excelsior-3868/globomantics-fe:v4=ghcr.io/${{ github.repository_owner }}/globomantics-hotel-frontend:${IMAGE_TAG}
+          kustomize edit set image excelsior-3868/globomantics-be:v7=ghcr.io/${{ github.repository_owner }}/globomantics-hotel-backend:${IMAGE_TAG}
           git add .
           git commit -m "Update globomantics-hotel backend and frontend images to ${IMAGE_TAG}"
           git push https://x-access-token:${PAT}@github.com/excelsior-3868/central-ci.git develop || true
